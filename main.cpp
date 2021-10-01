@@ -2,6 +2,8 @@
 #include <vector>
 #include "vulkan/vulkan.h"
 
+import VkErrorHandler;
+
 int main(){
     VkApplicationInfo m_appInfo;
     m_appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
@@ -25,7 +27,7 @@ int main(){
     m_instanceCreateInfo.ppEnabledExtensionNames = nullptr;
     m_instanceCreateInfo.enabledExtensionCount = 0;
     VkInstance m_instance;
-    vkCreateInstance(&m_instanceCreateInfo,nullptr,&m_instance);
+    handleVkError(vkCreateInstance(&m_instanceCreateInfo,nullptr,&m_instance));
     vkDestroyInstance(m_instance,nullptr);
     return 0;
 }
