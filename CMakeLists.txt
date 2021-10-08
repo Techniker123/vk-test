@@ -4,7 +4,7 @@ project(vktest)
 
 find_package(Vulkan)
 set(SRC_FILES 
-    ${CMAKE_CURRENT_SOURCE_DIR}/VkErrorHandler.cxx
+    ${CMAKE_CURRENT_SOURCE_DIR}/VkErrorHandler.cpp
 )
 
 add_executable(vktest ${SRC_FILES} main.cpp)
