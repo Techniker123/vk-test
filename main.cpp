@@ -1,10 +1,12 @@
 #include <iostream>
 #include <vector>
 #include "vulkan/vulkan.h"
+#include "ConfigFile.hpp"
 
 import VkErrorHandler;
 
 int main(){
+#if VULKAN_PRESENT == true
     VkApplicationInfo m_appInfo;
     m_appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
     m_appInfo.pNext = nullptr;
@@ -29,5 +31,8 @@ int main(){
     VkInstance m_instance;
     handleVkError(vkCreateInstance(&m_instanceCreateInfo,nullptr,&m_instance));
     vkDestroyInstance(m_instance,nullptr);
+#else
+    std::cout << "Vulkan Unsupported!" << std::endl;
+#endif
     return 0;
 }
