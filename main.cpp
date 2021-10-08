@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
+#if VULKAN_PRESENT == true
 #include "vulkan/vulkan.h"
+#endif
 #include "ConfigFile.hpp"
 
 import VkErrorHandler;
