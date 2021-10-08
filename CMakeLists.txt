@@ -8,7 +8,7 @@ set(SRC_FILES
 )
 
 add_executable(vktest ${SRC_FILES} main.cpp)
-target_compile_options(vktest PUBLIC  -std=c++2a -fmodules-ts)
+target_compile_options(vktest PUBLIC  -std=c++2a -fmodules)
 
 if(VULKAN_FOUND)
     target_link_libraries(vktest PUBLIC ${Vulkan_LIBRARIES})
